@@ -532,6 +532,15 @@
 
   .footer-links { display: flex; gap: 22px; font-size: 0.85rem; }
   .footer-links a:hover { color: var(--accent-dim); }
+  .footer-book-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+  .footer-book-btn:hover { color: var(--accent-dim); }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -540,6 +549,15 @@
 </style>
 </head>
 <body>
+
+<script id="anywhere_book_now_script" src="https://assets.setmore.com/integration/book-now/live/v1/anywhere-book-now.js"></script>
+<button
+  id="Anywhere_button_iframe"
+  class="anywhere-book-now-button"
+  style="position:fixed; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;"
+  data-booking-url="https://headshot-demo.setmore.com"
+  data-new-tab="false"
+>Book now</button>
 
 <div class="stripe-rail"></div>
 
@@ -553,7 +571,7 @@
         <a href="#gallery">Gallery</a>
         <a href="#visit">Visit</a>
       </div>
-      <a href="https://headshot-demo.setmore.com" target="_blank" rel="noopener" class="nav-cta">Book Now</a>
+      <button onclick="document.getElementById('Anywhere_button_iframe').click()" class="nav-cta">Book Now</button>
       <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu(this)">☰</button>
     </nav>
     <div class="mobile-menu" id="mobileMenu">
@@ -561,7 +579,7 @@
       <a href="#barbers" onclick="closeMobileMenu()">The Barbers</a>
       <a href="#gallery" onclick="closeMobileMenu()">Gallery</a>
       <a href="#visit" onclick="closeMobileMenu()">Visit</a>
-      <a href="https://headshot-demo.setmore.com" target="_blank" rel="noopener" class="nav-cta" onclick="closeMobileMenu()">Book Now</a>
+      <button onclick="closeMobileMenu(); document.getElementById('Anywhere_button_iframe').click()" class="nav-cta">Book Now</button>
     </div>
   </div>
 </header>
@@ -573,7 +591,7 @@
     <h1>Precision cuts.<br><em>No rushing.</em></h1>
     <p class="hero-sub">Four barbers, one standard: take the time it takes. Walk in for a trim or book ahead for color, sharp fades, or a full grooming session.</p>
     <div class="hero-actions">
-      <a href="https://headshot-demo.setmore.com" target="_blank" rel="noopener" class="btn-primary">Book an appointment</a>
+      <button onclick="document.getElementById('Anywhere_button_iframe').click()" class="btn-primary">Book an appointment</button>
       <a href="#barbers" class="btn-ghost">Meet the barbers</a>
     </div>
   </div>
@@ -727,7 +745,7 @@
           <svg class="booking-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>
           <div><strong>Pick your barber, service, and time.</strong></div>
           <div style="margin-top:6px; margin-bottom:24px;">Opens our live booking calendar in a new tab — takes about a minute.</div>
-          <a href="https://headshot-demo.setmore.com" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;">Open booking calendar</a>
+          <button onclick="document.getElementById('Anywhere_button_iframe').click()" class="btn-primary" style="display:inline-block;">Open booking calendar</button>
         </div>
       </div>
     </div>
@@ -759,7 +777,7 @@
     <div class="footer-links">
       <a href="#services">Services</a>
       <a href="#barbers">Barbers</a>
-      <a href="https://headshot-demo.setmore.com" target="_blank" rel="noopener">Book</a>
+      <button onclick="document.getElementById('Anywhere_button_iframe').click()" class="footer-book-btn">Book</button>
     </div>
   </div>
 </footer>
